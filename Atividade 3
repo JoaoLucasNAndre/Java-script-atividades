@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 3</title>
+</head>
+<body>
+
+    <h1 id="titulo">Título</h1>
+
+    <script>
+
+        let titulo = document.getElementById("titulo");
+
+        let tamanho = Math.random() * 70 + 30;
+
+        titulo.textContent = "Olá, Professor!";
+        titulo.style.color = "blue";
+        titulo.style.fontSize = tamanho + "px";
+
+    </script>
+
+</body>
+</html>
