@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 7</title>
+</head>
+<body>
+
+    <h1>Gravity Falls</h1>
+
+    <img
+        id="personagem"
+        src="https://picsum.photos/id/237/300/300"
+        width="300"
+    >
+
+    <p id="mensagem">Mensagem</p>
+
+    <button id="trocar">Trocar imagem</button>
+
+    <script>
+
+        let personagem = document.getElementById("personagem");
+        let mensagem = document.getElementById("mensagem");
+        let botao = document.getElementById("trocar");
+
+        personagem.addEventListener("mouseenter", function() {
+
+            mensagem.textContent = "Você entrou na imagem!";
+
+        });
+
+        personagem.addEventListener("mouseleave", function() {
+
+            mensagem.textContent = "Você saiu da imagem!";
+
+        });
+
+        personagem.addEventListener("mousemove", function() {
+
+            mensagem.textContent = "Você está mexendo o mouse!";
+
+        });
+
+        personagem.addEventListener("click", function() {
+
+            mensagem.textContent = "Você clicou no personagem!";
+
+        });
+
+        botao.addEventListener("click", function() {
+
+            personagem.src =
+                "https://picsum.photos/id/238/300/300";
+
+        });
+
+    </script>
+
+</body>
+</html>
