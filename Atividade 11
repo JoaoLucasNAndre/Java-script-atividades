@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 11</title>
+</head>
+<body>
+
+    <h1>Cadastro</h1>
+
+    <form id="formulario">
+
+        <label>Nome:</label>
+        <br>
+        <input type="text" id="nome">
+
+        <br><br>
+
+        <label>E-mail:</label>
+        <br>
+        <input type="text" id="email">
+
+        <br><br>
+
+        <label>Senha:</label>
+        <br>
+        <input type="password" id="senha">
+
+        <br><br>
+
+        <label>Confirmar senha:</label>
+        <br>
+        <input type="password" id="confirmar">
+
+        <br><br>
+
+        <input type="checkbox" id="mostrar">
+        <label>Mostrar senha</label>
+
+        <br><br>
+
+        <button>Cadastrar</button>
+
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+
+        let formulario = document.getElementById("formulario");
+
+        let nome = document.getElementById("nome");
+        let email = document.getElementById("email");
+        let senha = document.getElementById("senha");
+        let confirmar = document.getElementById("confirmar");
+
+        let mostrar = document.getElementById("mostrar");
+        let resultado = document.getElementById("resultado");
+
+        formulario.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const emailRegex =
+                /gustavolima@gmail.com/;
+
+            const senhaRegex =
+                /senha198576335535/;
+
+            if (nome.value.length < 3) {
+
+                resultado.textContent =
+                    "O nome deve ter pelo menos 3 caracteres.";
+
+            } else if (!emailRegex.test(email.value)) {
+
+                resultado.textContent =
+                    "E-mail inválido.";
+
+            } else if (!senhaRegex.test(senha.value)) {
+
+                resultado.textContent =
+                    "Senha inválida.";
+
+            } else if (senha.value != confirmar.value) {
+
+                resultado.textContent =
+                    "As senhas são diferentes.";
+
+            } else {
+
+                resultado.textContent =
+                    "Cadastro realizado com sucesso!";
+
+            }
+
+        });
+
+        mostrar.addEventListener("change", function() {
+
+            if (mostrar.checked) {
+
+                senha.type = "text";
+                confirmar.type = "text";
+
+            } else {
+
+                senha.type = "password";
+                confirmar.type = "password";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
