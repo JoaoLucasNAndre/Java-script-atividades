@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 6</title>
+</head>
+<body>
+
+    <h1>Gerador de Aventura</h1>
+
+    <button id="botao">Gerar aventura</button>
+
+    <p id="resultado"></p>
+
+    <script>
+
+        let acoes = [
+            "A Busca",
+            "A Batalha",
+            "O Resgate"
+        ];
+
+        let locais = [
+            "na Floresta Sombria",
+            "no Reino Perdido",
+            "na Montanha Misteriosa"
+        ];
+
+        let complementos = [
+            "do Dragão",
+            "do Tesouro Esquecido",
+            "da Espada Ancestral"
+        ];
+
+        let botao = document.getElementById("botao");
+        let resultado = document.getElementById("resultado");
+
+        botao.addEventListener("click", function() {
+
+            let acao = acoes[Math.floor(Math.random() * acoes.length)];
+
+            let local = locais[Math.floor(Math.random() * locais.length)];
+
+            let complemento =
+                complementos[Math.floor(Math.random() * complementos.length)];
+
+            resultado.textContent =
+                acao + " " + local + " " + complemento;
+
+        });
+
+    </script>
+
+</body>
+</html>
