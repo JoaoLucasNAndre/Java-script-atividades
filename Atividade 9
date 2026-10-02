@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 9</title>
+</head>
+<body>
+
+    <h1>Digite seu sabor de sorvete</h1>
+
+    <input type="text" id="sabor">
+
+    <p id="resultado"></p>
+
+    <button id="modo">Modo escuro</button>
+
+    <script>
+
+        let sabor = document.getElementById("sabor");
+        let resultado = document.getElementById("resultado");
+        let modo = document.getElementById("modo");
+
+        sabor.addEventListener("input", function() {
+
+            let texto = sabor.value.toLowerCase();
+
+            if (texto.length > 3) {
+
+                if (texto.includes("chocolate")) {
+
+                    resultado.textContent =
+                        "Eu amo sorvete de chocolate!";
+
+                } else if (texto.includes("flocos")) {
+
+                    resultado.textContent =
+                        "Ahh, mas chocolate é o meu favorito...";
+
+                } else {
+
+                    resultado.textContent =
+                        "Ahh, eu esperava um sabor de sorvete...";
+
+                }
+
+            }
+
+        });
+
+        modo.addEventListener("click", function() {
+
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+
+        });
+
+    </script>
+
+</body>
+</html>
